@@ -288,12 +288,7 @@
                                     <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
                                         <TextBlock Text="Увімкнено: " VerticalAlignment="Center" FontSize="15"/>
                                         <TextBlock x:Name="PasswordRestrictionsStatusTextBlock" VerticalAlignment="Center" FontWeight="SemiBold" FontSize="15"/>
-                                        <Button x:Name="ToggleRestrictionsButton"
-                                               Content="Вимкнути"
-                                               Style="{StaticResource MainButton}"
-                                               Width="140"
-                                               Margin="30,0,0,0"
-                                               Click="ToggleRestrictionsButton_Click"/>
+                                        <TextBlock Text="(встановлюється при створенні користувача)" VerticalAlignment="Center" Margin="15,0,0,0" FontSize="14" Foreground="{StaticResource TextSecondaryColor}"/>
                                     </StackPanel>
                                     
                                     <TextBlock x:Name="UserManagementMessage"

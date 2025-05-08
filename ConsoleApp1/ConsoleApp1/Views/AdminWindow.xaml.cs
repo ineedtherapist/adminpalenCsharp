@@ -297,10 +297,9 @@
                 UserBlockedStatusTextBlock.Text = isBlocked ? "Так" : "Ні";
                 ToggleBlockButton.Content = isBlocked ? "Розблокувати" : "Заблокувати";
                 
-                // Стан обмежень на пароль
+                // Стан обмежень на пароль (тільки для відображення інформації)
                 bool hasRestrictions = _selectedUser.HasPasswordRestrictions;
                 PasswordRestrictionsStatusTextBlock.Text = hasRestrictions ? "Так" : "Ні";
-                ToggleRestrictionsButton.Content = hasRestrictions ? "Вимкнути" : "Увімкнути";
                             }
                             else
                             {
@@ -351,7 +350,6 @@
                 
                 // Оновлюємо UI
                 PasswordRestrictionsStatusTextBlock.Text = newRestrictionsState ? "Так" : "Ні";
-                ToggleRestrictionsButton.Content = newRestrictionsState ? "Вимкнути" : "Увімкнути";
                 
                 // Показуємо повідомлення про успіх
                 UserManagementMessage.Text = $"Стан обмежень на пароль успішно змінено";
