@@ -1,0 +1,108 @@
+﻿<Window x:Class="ConsoleApp1.Views.RegistrationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConsoleApp1.Views"
+        mc:Ignorable="d"
+        Title="Реєстрація" Height="600" Width="650"
+        WindowStartupLocation="CenterScreen" 
+        ResizeMode="CanResize"
+        MinHeight="600" MinWidth="650"
+        Background="#F5F5F5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        
+        <!-- Заголовок -->
+        <Border Grid.Row="0" Background="{StaticResource PrimaryColor}" Padding="20,30">
+            <Grid>
+                <StackPanel HorizontalAlignment="Center">
+                    <TextBlock Text="Система керування автентифікацією" 
+                               Foreground="White" 
+                               FontSize="22" 
+                               FontWeight="Bold" 
+                               HorizontalAlignment="Center"/>
+                    <TextBlock Text="Реєстрація нового користувача" 
+                               Foreground="White"
+                               FontSize="16" 
+                               HorizontalAlignment="Center"
+                               Margin="0,10,0,0"/>
+                </StackPanel>
+            </Grid>
+        </Border>
+        
+        <!-- Форма реєстрації -->
+        <Border Grid.Row="1" 
+                Background="White" 
+                Margin="50,30" 
+                CornerRadius="5" 
+                Padding="40"
+                BorderThickness="1"
+                BorderBrush="#E0E0E0">
+            
+            <StackPanel VerticalAlignment="Center">
+                <TextBlock Text="Логін" Margin="5,0,5,10" FontSize="16"/>
+                <TextBox x:Name="UsernameTextBox" 
+                         Style="{StaticResource MainTextBox}" 
+                         Margin="5,0,5,25"/>
+                
+                <TextBlock Text="Пароль (необов'язково)" Margin="5,0,5,10" FontSize="16"/>
+                <PasswordBox x:Name="PasswordBox" 
+                             Style="{StaticResource MainPasswordBox}" 
+                             Margin="5,0,5,25"/>
+                
+                <CheckBox x:Name="PasswordRestrictionsCheckBox" 
+                          Content="Увімкнути обмеження на пароль"
+                          Margin="5,0,5,10" 
+                          FontSize="15"
+                          Checked="PasswordRestrictionsCheckBox_Checked"
+                          Unchecked="PasswordRestrictionsCheckBox_Unchecked"/>
+                
+                <TextBlock x:Name="PasswordRequirementsText"
+                           Text="Пароль повинен містити великі та малі літери, а також хоча б один арифметичний символ (+, -, *, /, %, =)"
+                           TextWrapping="Wrap"
+                           Margin="25,5,5,25"
+                           FontSize="14"
+                           Foreground="{StaticResource TextSecondaryColor}"
+                           Visibility="Collapsed"/>
+                
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+                    <Button x:Name="RegisterButton" 
+                            Content="Зареєструватися" 
+                            Style="{StaticResource MainButton}"
+                            Width="180"
+                            FontSize="15"
+                            Click="RegisterButton_Click"/>
+                    
+                    <Button x:Name="CancelButton" 
+                            Content="Скасувати" 
+                            Style="{StaticResource MainButton}"
+                            Background="{StaticResource TextSecondaryColor}"
+                            Width="130"
+                            FontSize="15"
+                            Margin="15,8"
+                            Click="CancelButton_Click"/>
+                </StackPanel>
+                
+                <TextBlock x:Name="ErrorMessage" 
+                           Foreground="Red" 
+                           TextWrapping="Wrap"
+                           Margin="5,25" 
+                           FontSize="14"
+                           TextAlignment="Center" 
+                           Visibility="Collapsed"/>
+            </StackPanel>
+        </Border>
+        
+        <!-- Нижній колонтитул -->
+        <TextBlock Grid.Row="2" 
+                   Text="© 2024 Система керування автентифікацією" 
+                   Foreground="{StaticResource TextSecondaryColor}" 
+                   HorizontalAlignment="Center" 
+                   Margin="0,0,0,15"/>
+    </Grid>
+</Window>
